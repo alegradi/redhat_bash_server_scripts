@@ -45,7 +45,9 @@ else
 fi
 
 
-# Prompt the user whether it's ok to remove the script or not
+# Prompt the user whether it's ok to remove the script or not and clearing history
+
+history -r
 
 echo -e "\n##########################################"
 echo -e "The $0 script has finished running. Self erasing now... is this ok? y/n"
