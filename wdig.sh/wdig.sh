@@ -10,15 +10,11 @@ dig $1 ANY > /tmp/wdig_temp
 DOMAIN_IPV4=`grep -w A /tmp/wdig_temp | awk '{ print $5 }'`
 DOMAIN_IPV6=`grep -w AAAA /tmp/wdig_temp | awk '{ print $5 }'`
 
+#Left this in as reference
 #whois=$(whois $DOMAIN_IPV4 | grep -iE 'netname|address')
-#whois="test"
-
-#echo -e "$DOMAIN_IPV4"
-#echo -e "$DOMAIN_IPV6"
-
-#exit 0
 
 ## Script
+# Check if the variable is not empty
 if [ ! -z "$DOMAIN_IPV4" ]
 then
     echo -e "\nThe domain $1 points to > $DOMAIN_IPV4 IPv4"
