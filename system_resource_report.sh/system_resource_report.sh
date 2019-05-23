@@ -31,6 +31,7 @@ echo -e "==========================\n"
 echo -e "-- Packages --\n"
 echo -e "Last three updates\n"
 yum history | head -n 6 | tail -n 5
+echo -e ""
 echo -e "Available packages for upgrade: `yum check-update -q | wc -l`\n"
 echo "Current Kernel: `uname -r`"
 echo "Latest Kernel:" 
@@ -44,28 +45,37 @@ else
     echo "No SAR utility available. Is this intentional?"
 fi
 
+echo -e "==========================\n"
+echo -e "-- Disk Performance --\n"
+dd if=/dev/zero of=/test.test bs=1M count=1024 conv=fdatasync
+
+echo -e "==========================\n"
+#echo -e "-- Processes running --\n"
+#processes come here
+
 
 # Prompt the user whether it's ok to remove the script or not and clearing history
+# -- Uncomment below for self erase to work --
 
-history -r
+#history -r
 
 echo -e "\n##########################################"
-echo -e "The $0 script has finished running. Self erasing now... is this ok? y/n"
+#echo -e "The $0 script has finished running. Self erasing now... is this ok? y/n"
 
-read SELFERASE
+#read SELFERASE
 
-if [ $SELFERASE = y ]
-  then
-    rm -f $0
-    echo -e "\nFile: $0 removed!\n"
-  else
-    echo -e "\nThe $0 script has not been removed! Please don't leave me behind unless required later!\n"
-fi
+#if [ $SELFERASE = y ]
+#  then
+#    rm -f $0
+#    echo -e "\nFile: $0 removed!\n"
+#  else
+#    echo -e "\nThe $0 script has not been removed! Please don't leave me behind unless required later!\n"
+#fi
 
 
 # Script - end
 
-exit 
+exit 0
 
 
 
