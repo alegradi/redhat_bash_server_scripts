@@ -1,8 +1,7 @@
 #!/bin/bash
 # More user friendly way of digging a Domain name with extended information
-# Until I find a better way to incorporate IPv6 checks it will stay like this
 # Run it as an executable, alias it or place it in /bin/ 
-# Usage: wdig domain_name
+# Usage: wdig.sh domain_name 
 
 dig $1 ANY > /tmp/wdig_temp
 
