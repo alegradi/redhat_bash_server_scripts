@@ -7,6 +7,8 @@ export HISTSIZE=5000'
 
 echo "$BASH_PROFILE" >> /root/.bash_profile
 
+echo "colorscheme desert" > /root/.vimrc
+
 exit 0
 
 
