@@ -1,10 +1,16 @@
-#!/bin/bash
+# ###
 # system_resource_report.sh
-# Simple system resource report generating tool
+# Simple system resource report generating tool for Centos/RHEL servers
+# ###
 
+# To Do list
+# Disk health check incorporated?
+#
 
-# Global variables come here
+### Please don't touch anything below this line if you want the script to function as intended ###
 
+# Clean up bash history
+unset HISTFILE
 
 
 # Script - start
