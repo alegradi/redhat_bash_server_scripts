@@ -47,7 +47,8 @@ fi
 
 echo -e "==========================\n"
 echo -e "-- Disk Performance --\n"
-dd if=/dev/zero of=/test.test bs=1M count=1024 conv=fdatasync
+dd if=/dev/zero of=/tmp/test.test bs=1M count=1024 conv=fdatasync
+rm -f /tmp/test.test
 
 echo -e "==========================\n"
 #echo -e "-- Processes running --\n"
